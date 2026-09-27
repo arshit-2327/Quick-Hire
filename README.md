@@ -17,10 +17,11 @@
 2. [Tools & Technologies](#-tools--technologies)
 3. [System Architecture & Workflow](#-system-architecture--workflow)
 4. [Mathematical Formulation](#-mathematical-formulation)
-5. [Step-by-Step Setup Guide (Clone & Run)](#-step-by-step-setup-guide-clone--run)
-6. [Project Directory Structure](#-project-directory-structure)
-7. [API Endpoints Reference](#-api-endpoints-reference)
-8. [License & Acknowledgements](#-license--acknowledgements)
+5. [Step-by-Step Setup Guide (Clone & Run Locally)](#-step-by-step-setup-guide-clone--run-locally)
+6. [☁️ Cloud Deployment Guide (Neon + Render + Vercel)](#️-cloud-deployment-guide-neon--render--vercel)
+7. [Project Directory Structure](#-project-directory-structure)
+8. [API Endpoints Reference](#-api-endpoints-reference)
+9. [License & Acknowledgements](#-license--acknowledgements)
 
 ---
 
@@ -288,6 +289,89 @@ cd quick-hire/frontend
 
 ---
 
+---
+
+## ☁️ Cloud Deployment Guide (Neon + Render + Vercel)
+
+Deploy the entire Quick Hire stack 100% free with automated continuous deployment on Git push.
+
+```mermaid
+flowchart LR
+    Browser([User Browser]) -->|HTTPS UI| Vercel[Vercel\nReact 19 + Vite]
+    Vercel -->|REST API Calls| Render[Render.com\nJava 21 Spring Boot Docker]
+    Render -->|PostgreSQL Wire| Neon[(Neon.tech\nCloud PostgreSQL)]
+    Render -->|AI Prompts| Gemini([Google Gemini 2.0 API])
+```
+
+---
+
+### Step 1: Create Free PostgreSQL Database on Neon.tech
+1. Sign up at [Neon.tech](https://neon.tech/) (free, no credit card required).
+2. Click **Create Project** $\rightarrow$ Name it `quick-hire-db`.
+3. In your Neon dashboard, locate the **Connection Details** widget:
+   - Select **Connection string** $\rightarrow$ **Java (JDBC)**.
+   - Note down:
+     - **JDBC URL**: e.g., `jdbc:postgresql://ep-xyz.us-east-2.aws.neon.tech/neondb?sslmode=require`
+     - **User**: e.g., `neondb_owner`
+     - **Password**: `your_neon_password`
+
+---
+
+### Step 2: Deploy Spring Boot Backend on Render.com
+1. Sign in to [Render.com](https://render.com/) with your GitHub account.
+2. Click **New +** $\rightarrow$ **Web Service**.
+3. Connect your GitHub repository (`quick-hire`).
+4. Configure the service settings:
+   - **Name**: `quick-hire-backend`
+   - **Language**: **`Docker`** *(Render automatically detects `backend/Dockerfile`)*
+   - **Branch**: `main`
+   - **Region**: Choose the region closest to your Neon database (e.g., `Oregon (US West)` or `Frankfurt (EU)`)
+   - **Root Directory**: **`backend`**
+   - **Instance Type**: **Free** ($0/month, 512 MB RAM)
+5. Scroll down to **Environment Variables** and add the following keys:
+   | Key | Value | Notes |
+   | :--- | :--- | :--- |
+   | `DB_URL` | `jdbc:postgresql://ep-xyz.neon.tech/neondb?sslmode=require` | From Neon dashboard |
+   | `DB_USER` | `your_neon_username` | From Neon dashboard |
+   | `DB_PASS` | `your_neon_password` | From Neon dashboard |
+   | `GEMINI_API_KEY` | `AIzaSy...` | From [Google AI Studio](https://aistudio.google.com/app/apikey) |
+   | `PORT` | `8080` | Container port |
+6. Click **Deploy Web Service**.
+7. Render will build the Docker container and start your Spring Boot application.
+8. Once live, Render displays your public backend URL, for example:  
+   `https://quick-hire-backend.onrender.com`
+9. Test health in your browser:  
+   `https://quick-hire-backend.onrender.com/api/config/status`
+
+---
+
+### Step 3: Deploy React Frontend on Vercel
+1. Sign up/log in at [Vercel](https://vercel.com/) with your GitHub account.
+2. Click **Add New...** $\rightarrow$ **Project**.
+3. Import your `quick-hire` repository.
+4. Configure the project build settings:
+   - **Framework Preset**: `Vite`
+   - **Root Directory**: Click *Edit* and select **`frontend`**
+   - **Build Command**: `npm run build` *(default)*
+   - **Output Directory**: `dist` *(default)*
+5. Expand **Environment Variables** and add:
+   - **Name**: `VITE_API_BASE_URL`
+   - **Value**: `https://quick-hire-backend.onrender.com/api` *(replace with your actual Render URL + `/api`)*
+6. Click **Deploy**.
+7. Vercel will build and assign you a global production URL:  
+   `https://quick-hire.vercel.app`
+
+---
+
+### Step 4: Verification & Live Testing
+1. Visit your live Vercel URL in your browser.
+2. Navigate to **System Status & Settings** tab:
+   - Ensure the database connection status displays **Active / Connected**.
+   - Check that Gemini AI status is **Ready**.
+3. Upload a sample resume in the **Candidate Portal** and verify that role inference, vector scoring, and recruiter rankings work seamlessly in production.
+
+---
+
 ## 📁 Project Directory Structure
 
 ```text
@@ -297,6 +381,8 @@ quick-hire/
 ├── sample_resume.txt                   # Sample test resume file
 │
 ├── backend/                            # Spring Boot 3 Java Application
+│   ├── Dockerfile                      # Multi-stage Java 21 build for Render deployment
+│   ├── .dockerignore                   # Excludes build artifacts & secrets from Docker image
 │   ├── .env.example                    # Environment variable template
 │   ├── mvnw / mvnw.cmd                 # Maven wrapper executables
 │   ├── pom.xml                         # Maven dependencies & build configuration
@@ -312,17 +398,19 @@ quick-hire/
 │       │   │   ├── service/                        # Business logic (Gemini AI, Matching, Parsing)
 │       │   │   └── util/                           # Vector mathematics & Cosine Similarity
 │       │   └── resources/
-│       │       └── application.properties          # Spring configuration & DB bindings
+│       │       └── application.properties          # Spring configuration & dynamic port bindings
 │       └── test/                                   # Unit & integration tests
 │
 └── frontend/                           # React 19 + Vite + Tailwind CSS Application
     ├── index.html                      # HTML entrypoint
     ├── package.json                    # Frontend dependencies & scripts
-    ├── vite.config.js                  # Vite configuration & proxy settings
+    ├── vite.config.js                  # Vite configuration
+    ├── vercel.json                     # SPA routing rewrite rule for Vercel
+    ├── .env.example                    # Frontend environment variable template
     ├── run-frontend.bat                # One-click Windows startup script
     └── src/
         ├── App.jsx                     # Main application layout & portal tabs
-        ├── api.js                      # Axios/Fetch REST client
+        ├── api.js                      # Dynamic REST API client (supports VITE_API_BASE_URL)
         ├── main.jsx                    # React root renderer
         ├── index.css                   # Global styles & Tailwind CSS imports
         └── assets/                     # Application logos and SVG icons
