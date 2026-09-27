@@ -1,0 +1,35 @@
+# ============================================================
+# Quick Hire - Git Ignore Rules
+# ============================================================
+
+# --- Secrets & Environment ---
+.env
+*.env
+
+# --- Java / Maven ---
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+.mvn/wrapper/maven-wrapper.jar
+
+# --- IDE ---
+.idea/
+*.iml
+.vscode/settings.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# --- Node / Frontend ---
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# --- OS ---
+.DS_Store
+Thumbs.db

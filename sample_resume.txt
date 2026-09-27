@@ -1,0 +1,10 @@
+John Doe
+Email: john.doe@example.com
+Phone: +91 9123456780
+Education: B.Tech in Computer Science
+
+Summary:
+Full Stack Web Developer with experience in React, Spring Boot, Java, PostgreSQL, and REST API development.
+
+Skills:
+Java, Spring Boot, React, JavaScript, PostgreSQL, Docker, Git, REST API
