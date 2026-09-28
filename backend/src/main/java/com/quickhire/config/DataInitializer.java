@@ -9,6 +9,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
+import com.quickhire.model.User;
+import com.quickhire.repository.UserRepository;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 import java.util.List;
 
 @Configuration
@@ -18,14 +22,34 @@ public class DataInitializer implements CommandLineRunner {
 
     private final JobRepository jobRepository;
     private final GeminiAIService geminiAIService;
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public DataInitializer(JobRepository jobRepository, GeminiAIService geminiAIService) {
+    public DataInitializer(JobRepository jobRepository,
+                           GeminiAIService geminiAIService,
+                           UserRepository userRepository,
+                           PasswordEncoder passwordEncoder) {
         this.jobRepository = jobRepository;
         this.geminiAIService = geminiAIService;
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
     public void run(String... args) {
+        // Seed default demo accounts
+        if (userRepository.findByEmail("student@demo.com").isEmpty()) {
+            User demoStudent = new User("Alex Rivera", "student@demo.com", passwordEncoder.encode("password123"), "STUDENT", null);
+            userRepository.save(demoStudent);
+            log.info("Seeded demo candidate account: student@demo.com / password123");
+        }
+
+        if (userRepository.findByEmail("recruiter@demo.com").isEmpty()) {
+            User demoRecruiter = new User("Sarah Jenkins", "recruiter@demo.com", passwordEncoder.encode("password123"), "RECRUITER", "TechCorp Global");
+            userRepository.save(demoRecruiter);
+            log.info("Seeded demo recruiter account: recruiter@demo.com / password123");
+        }
+
         if (jobRepository.count() == 0) {
             log.info("Seeding initial job postings into database...");
 
