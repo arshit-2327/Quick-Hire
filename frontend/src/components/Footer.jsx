@@ -19,7 +19,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-xs text-[#7F796F] leading-relaxed">
-              Human-first resume intelligence. Combining 768-dimensional NLP vector embeddings and Google Gemini 2.0.
+              Human-centered talent intelligence. Connecting ambitious talent with discerning teams through thoughtful, competence-first matching.
             </p>
           </div>
 
@@ -31,41 +31,33 @@ export default function Footer() {
                 <Link to="/" className="hover:text-white transition-colors">Overview</Link>
               </li>
               <li>
-                <Link to="/candidate" className="hover:text-white transition-colors">Candidate Screening</Link>
+                <Link to="/jobs" className="hover:text-white transition-colors">Job Openings</Link>
               </li>
               <li>
-                <Link to="/recruiter" className="hover:text-white transition-colors">Recruiter Talent Engine</Link>
+                <Link to="/candidate" className="hover:text-white transition-colors">Candidate Portal</Link>
               </li>
               <li>
-                <Link to="/settings" className="hover:text-white transition-colors">System Diagnostics</Link>
+                <Link to="/recruiter" className="hover:text-white transition-colors">Recruiter Hub</Link>
               </li>
             </ul>
           </div>
 
-          {/* Navigation Column 2 */}
+          {/* Values Column */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#ECE8E1] mb-4">Architecture</h4>
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#ECE8E1] mb-4">Principles</h4>
             <ul className="space-y-2.5 text-xs">
-              <li className="flex items-center gap-1">
-                <span>Google Gemini 2.0 Flash</span>
-              </li>
-              <li className="flex items-center gap-1">
-                <span>768-Dim text-embedding-004</span>
-              </li>
-              <li className="flex items-center gap-1">
-                <span>Cosine Similarity Engine</span>
-              </li>
-              <li className="flex items-center gap-1">
-                <span>Spring Boot 3 + PostgreSQL</span>
-              </li>
+              <li className="text-[#8E877E]">Holistic Candidate Profiles</li>
+              <li className="text-[#8E877E]">Skill Depth Over Exact Keywords</li>
+              <li className="text-[#8E877E]">Transparent Applicant Feedback</li>
+              <li className="text-[#8E877E]">Recruiter Precision Pipelines</li>
             </ul>
           </div>
 
-          {/* Standards & Philosophy */}
+          {/* Philosophy Column */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-[#ECE8E1] mb-4">Philosophy</h4>
             <p className="text-xs text-[#7F796F] leading-relaxed">
-              We replace cold, rigid ATS keyword filters with nuanced semantic understanding and transparent skill gap explanations.
+              We believe recruitment should celebrate what people can do, eliminating arbitrary rejections and highlighting real capability.
             </p>
             <div className="mt-4 pt-3 border-t border-[#1C1A17] flex items-center gap-2 text-[11px] text-amber-500/80 font-medium">
               <Sparkles className="w-3.5 h-3.5" />
@@ -78,11 +70,11 @@ export default function Footer() {
         <div className="pt-8 border-t border-[#1C1A17] flex flex-col sm:flex-row items-center justify-between text-xs text-[#6B655C] gap-4">
           <p>© {new Date().getFullYear()} Quick Hire Systems. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <span>Spring Boot 3.3.4</span>
+            <Link to="/jobs" className="hover:text-[#A39D92] transition-colors">Browse Jobs</Link>
             <span>•</span>
-            <span>React 19</span>
+            <Link to="/candidate" className="hover:text-[#A39D92] transition-colors">My Applications</Link>
             <span>•</span>
-            <span>JWT Secured</span>
+            <Link to="/settings" className="hover:text-[#A39D92] transition-colors">System Diagnostics</Link>
           </div>
         </div>
       </div>

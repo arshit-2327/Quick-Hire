@@ -184,6 +184,53 @@ export const api = {
     return true;
   },
 
+  // Job Applications
+  async applyToJob(jobId, userId) {
+    const res = await fetch(`${API_BASE}/applications/apply`, {
+      method: 'POST',
+      headers: authHeaders({ 'Content-Type': 'application/json' }),
+      body: JSON.stringify({ jobId, userId }),
+    });
+    const result = await res.json();
+    if (!res.ok) throw new Error(result.message || 'Failed to submit application');
+    return result;
+  },
+
+  async getCandidateApplications(userId) {
+    const res = await fetch(`${API_BASE}/applications/candidate/${userId}`, {
+      headers: authHeaders(),
+    });
+    if (!res.ok) throw new Error('Failed to fetch applications');
+    return res.json();
+  },
+
+  async getJobApplicants(jobId) {
+    const res = await fetch(`${API_BASE}/applications/job/${jobId}`, {
+      headers: authHeaders(),
+    });
+    if (!res.ok) throw new Error('Failed to fetch job applicants');
+    return res.json();
+  },
+
+  async updateApplicationStatus(applicationId, status) {
+    const res = await fetch(`${API_BASE}/applications/${applicationId}/status`, {
+      method: 'PATCH',
+      headers: authHeaders({ 'Content-Type': 'application/json' }),
+      body: JSON.stringify({ status }),
+    });
+    const result = await res.json();
+    if (!res.ok) throw new Error(result.message || 'Failed to update application status');
+    return result;
+  },
+
+  async getJobApplicantCount(jobId) {
+    const res = await fetch(`${API_BASE}/applications/stats/job/${jobId}`, {
+      headers: authHeaders(),
+    });
+    if (!res.ok) return { applicantCount: 0 };
+    return res.json();
+  },
+
   // System Config
   async getSystemStatus() {
     const res = await fetch(`${API_BASE}/config/status`, {

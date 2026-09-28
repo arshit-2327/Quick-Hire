@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import AuthModal from './components/AuthModal';
 import HomePage from './pages/HomePage';
+import JobsPage from './pages/JobsPage';
 import CandidateDashboard from './pages/CandidateDashboard';
 import RecruiterDashboard from './pages/RecruiterDashboard';
 import SettingsPage from './pages/SettingsPage';
@@ -18,6 +19,7 @@ export default function App() {
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/jobs" element={<JobsPage />} />
           <Route path="/candidate" element={<CandidateDashboard />} />
           <Route path="/recruiter" element={<RecruiterDashboard />} />
           <Route path="/settings" element={<SettingsPage />} />

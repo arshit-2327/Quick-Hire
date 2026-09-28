@@ -13,7 +13,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-40 w-full bg-[#0F0E0D]/85 backdrop-blur-md border-b border-[#24211E] transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
         
-        {/* Left: Brand Logo & Wordmark (Squarespace Minimalist Style) */}
+        {/* Left: Brand Logo & Wordmark */}
         <Link to="/" className="flex items-center gap-3 group">
           <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-black font-extrabold tracking-tighter text-sm transition-transform group-hover:scale-105 shadow-sm">
             QH
@@ -23,8 +23,8 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* Center: Editorial Navigation Links */}
-        <nav className="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-[#A6A096]">
+        {/* Center: Navigation Links */}
+        <nav className="hidden md:flex items-center gap-7 text-xs font-semibold uppercase tracking-wider text-[#A6A096]">
           <Link
             to="/"
             className={`transition-colors hover:text-white ${
@@ -32,6 +32,14 @@ export default function Navbar() {
             }`}
           >
             Overview
+          </Link>
+          <Link
+            to="/jobs"
+            className={`transition-colors hover:text-white ${
+              isActive('/jobs') ? 'text-white' : ''
+            }`}
+          >
+            Jobs
           </Link>
           <Link
             to="/candidate"
@@ -47,7 +55,7 @@ export default function Navbar() {
               isActive('/recruiter') ? 'text-white' : ''
             }`}
           >
-            Recruiter Engine
+            Recruiter Hub
           </Link>
           <Link
             to="/settings"
@@ -59,7 +67,7 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        {/* Right: Auth & CTAs (Exact Squarespace style with white GET STARTED button) */}
+        {/* Right: Auth & CTAs */}
         <div className="flex items-center gap-4">
           {currentUser ? (
             <div className="flex items-center gap-3">
@@ -74,7 +82,7 @@ export default function Navbar() {
               <button
                 onClick={logout}
                 title="Log Out"
-                className="p-2 text-[#8E877E] hover:text-white rounded-lg hover:bg-[#201E1B] transition-colors"
+                className="p-2 text-[#8E877E] hover:text-white rounded-lg hover:bg-[#201E1B] transition-colors cursor-pointer"
               >
                 <LogOut className="w-4 h-4" />
               </button>

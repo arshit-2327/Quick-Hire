@@ -123,6 +123,7 @@ public class GeminiAIService {
     // GEMINI REST API INTEGRATION
     // ==========================================
 
+    @SuppressWarnings("null")
     private ParsedResumeData callGeminiForResume(String resumeText) throws Exception {
         String url = String.format("https://generativelanguage.googleapis.com/v1beta/models/%s:generateContent?key=%s",
                 geminiModel, apiKey);
@@ -166,6 +167,7 @@ public class GeminiAIService {
         return objectMapper.readValue(textContent, ParsedResumeData.class);
     }
 
+    @SuppressWarnings("null")
     private List<Double> callGeminiEmbedding(String text) throws Exception {
         String url = String.format("https://generativelanguage.googleapis.com/v1beta/models/%s:embedContent?key=%s",
                 embeddingModel, apiKey);
@@ -198,6 +200,7 @@ public class GeminiAIService {
         return vector;
     }
 
+    @SuppressWarnings("null")
     private MatchAnalysis callGeminiForMatchAnalysis(CandidateProfile candidate, Job job) throws Exception {
         String url = String.format("https://generativelanguage.googleapis.com/v1beta/models/%s:generateContent?key=%s",
                 geminiModel, apiKey);

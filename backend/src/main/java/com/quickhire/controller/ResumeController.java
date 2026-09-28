@@ -18,6 +18,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/resume")
+@SuppressWarnings("null")
 public class ResumeController {
 
     private static final Logger log = LoggerFactory.getLogger(ResumeController.class);
