@@ -1,0 +1,117 @@
+{
+  "benchmarkDate": "2026-09-30T14:54:57.649Z",
+  "datasetStats": {
+    "totalJobs": 10,
+    "totalCandidates": 25,
+    "totalEvaluatedPairs": 250
+  },
+  "baselines": [
+    {
+      "model": "Baseline: BM25 (Lexical)",
+      "ndcg1": "1.0000",
+      "ndcg3": "0.9821",
+      "ndcg5": "0.9585",
+      "p1": "1.0000",
+      "p3": "0.9000",
+      "p5": "0.7600",
+      "mrr": "1.0000",
+      "latencyMs": "0.0941 ms"
+    },
+    {
+      "model": "Baseline: Dense Cosine (Semantic)",
+      "ndcg1": "1.0000",
+      "ndcg3": "0.9861",
+      "ndcg5": "0.9318",
+      "p1": "1.0000",
+      "p3": "0.9333",
+      "p5": "0.7000",
+      "mrr": "1.0000",
+      "latencyMs": "0.0252 ms"
+    },
+    {
+      "model": "Baseline: Jaccard Skill Overlap",
+      "ndcg1": "1.0000",
+      "ndcg3": "0.9743",
+      "ndcg5": "0.9718",
+      "p1": "1.0000",
+      "p3": "0.9000",
+      "p5": "0.8200",
+      "mrr": "1.0000",
+      "latencyMs": "0.0046 ms"
+    },
+    {
+      "model": "QuickHire: Fallback Engine (Offline)",
+      "ndcg1": "1.0000",
+      "ndcg3": "0.9898",
+      "ndcg5": "0.9700",
+      "p1": "1.0000",
+      "p3": "0.9333",
+      "p5": "0.8000",
+      "mrr": "1.0000",
+      "latencyMs": "0.0254 ms"
+    },
+    {
+      "model": "QuickHire: Hybrid Architecture (Proposed)",
+      "ndcg1": "1.0000",
+      "ndcg3": "0.9898",
+      "ndcg5": "0.9700",
+      "p1": "1.0000",
+      "p3": "0.9333",
+      "p5": "0.8000",
+      "mrr": "1.0000",
+      "latencyMs": "0.0209 ms"
+    }
+  ],
+  "ablation": [
+    {
+      "model": "1. Dense Semantic Only (alpha=1.0, beta=0, gamma=0)",
+      "ndcg1": "1.0000",
+      "ndcg3": "0.9861",
+      "ndcg5": "0.9318",
+      "p1": "1.0000",
+      "p3": "0.9333",
+      "p5": "0.7000",
+      "mrr": "1.0000",
+      "latencyMs": "0.0220 ms"
+    },
+    {
+      "model": "2. Skill Overlap Only (alpha=0, beta=1.0, gamma=0)",
+      "ndcg1": "1.0000",
+      "ndcg3": "0.9646",
+      "ndcg5": "0.9649",
+      "p1": "1.0000",
+      "p3": "0.9333",
+      "p5": "0.8200",
+      "mrr": "1.0000",
+      "latencyMs": "0.0222 ms"
+    },
+    {
+      "model": "3. Hybrid without Role Bonus (alpha=0.50, beta=0.50, gamma=0)",
+      "ndcg1": "1.0000",
+      "ndcg3": "0.9939",
+      "ndcg5": "0.9785",
+      "p1": "1.0000",
+      "p3": "0.9333",
+      "p5": "0.8200",
+      "mrr": "1.0000",
+      "latencyMs": "0.0206 ms"
+    },
+    {
+      "model": "4. Full Proposed Hybrid (alpha=0.45, beta=0.45, gamma=10)",
+      "ndcg1": "1.0000",
+      "ndcg3": "0.9898",
+      "ndcg5": "0.9700",
+      "p1": "1.0000",
+      "p3": "0.9333",
+      "p5": "0.8000",
+      "mrr": "1.0000",
+      "latencyMs": "0.0202 ms"
+    }
+  ],
+  "optimalHyperparameters": {
+    "alpha": "0.20",
+    "beta": "0.20",
+    "gamma": 0,
+    "ndcg5": "0.9785"
+  }
+}

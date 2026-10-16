@@ -1,0 +1,289 @@
+{
+  "domains": ["Backend Engineering", "Frontend Engineering", "Full Stack Engineering", "DevOps & Cloud", "Data & Machine Learning"],
+  "jobs": [
+    {
+      "id": "J1",
+      "title": "Senior Java Backend Engineer",
+      "domain": "Backend Engineering",
+      "requiredSkills": ["Java", "Spring Boot", "Microservices", "PostgreSQL", "Docker", "REST API", "Kafka"],
+      "description": "Looking for a Senior Backend Engineer proficient in Java 17+, Spring Boot microservices, distributed messaging with Kafka, and containerized deployment with Docker and PostgreSQL."
+    },
+    {
+      "id": "J2",
+      "title": "Junior Java Developer",
+      "domain": "Backend Engineering",
+      "requiredSkills": ["Java", "Spring Boot", "MySQL", "REST API", "Git"],
+      "description": "Entry-level backend position for candidates with strong core Java fundamentals, Spring Boot framework basics, SQL querying with MySQL, and Git version control."
+    },
+    {
+      "id": "J3",
+      "title": "Lead React Frontend Developer",
+      "domain": "Frontend Engineering",
+      "requiredSkills": ["React", "JavaScript", "TypeScript", "Tailwind CSS", "Redux", "HTML5", "CSS3"],
+      "description": "Seeking an experienced React developer to build high-performance single page applications with React 18, TypeScript, Tailwind CSS, and state management using Redux Toolkit."
+    },
+    {
+      "id": "J4",
+      "title": "Frontend UI/UX Engineer",
+      "domain": "Frontend Engineering",
+      "requiredSkills": ["React", "CSS3", "HTML5", "Figma", "JavaScript", "Tailwind CSS"],
+      "description": "Design-focused frontend developer responsible for responsive design, component libraries, design systems, and converting Figma designs into interactive React interfaces."
+    },
+    {
+      "id": "J5",
+      "title": "Full Stack Java & React Engineer",
+      "domain": "Full Stack Engineering",
+      "requiredSkills": ["Java", "Spring Boot", "React", "JavaScript", "PostgreSQL", "Docker", "REST API"],
+      "description": "Full stack engineer capable of developing both client-side React SPAs and scalable Spring Boot REST APIs with relational databases and Dockerized workflows."
+    },
+    {
+      "id": "J6",
+      "title": "Full Stack Python & Vue Developer",
+      "domain": "Full Stack Engineering",
+      "requiredSkills": ["Python", "FastAPI", "Vue.js", "PostgreSQL", "Docker", "REST API"],
+      "description": "Full stack software engineer proficient in building asynchronous backends with Python FastAPI and intuitive reactive frontends using Vue 3 and PostgreSQL."
+    },
+    {
+      "id": "J7",
+      "title": "DevOps & Kubernetes Cloud Engineer",
+      "domain": "DevOps & Cloud",
+      "requiredSkills": ["Docker", "Kubernetes", "AWS", "Terraform", "CI/CD", "Linux", "Bash"],
+      "description": "Cloud infrastructure engineer focused on managing AWS infrastructure with Terraform, orchestrating microservices on Kubernetes, and automating CI/CD release pipelines."
+    },
+    {
+      "id": "J8",
+      "title": "Site Reliability Engineer (SRE)",
+      "domain": "DevOps & Cloud",
+      "requiredSkills": ["Linux", "Kubernetes", "Prometheus", "Grafana", "Python", "Docker", "CI/CD"],
+      "description": "SRE to ensure 99.99% uptime of distributed clusters using Prometheus, Grafana, Linux kernel tuning, incident management, and automated Python remediation scripts."
+    },
+    {
+      "id": "J9",
+      "title": "Machine Learning Engineer",
+      "domain": "Data & Machine Learning",
+      "requiredSkills": ["Python", "PyTorch", "Scikit-Learn", "Machine Learning", "NLP", "Pandas", "Docker"],
+      "description": "Engineer to train, evaluate, and deploy machine learning and NLP models into production using PyTorch, Scikit-Learn, vector search, and containerized inference APIs."
+    },
+    {
+      "id": "J10",
+      "title": "Data Analyst & BI Specialist",
+      "domain": "Data & Machine Learning",
+      "requiredSkills": ["Python", "SQL", "Pandas", "Power BI", "Tableau", "Data Analysis"],
+      "description": "Business intelligence specialist responsible for building executive dashboards in Power BI, data wrangling with Pandas and SQL, and statistical report generation."
+    }
+  ],
+  "candidates": [
+    {
+      "id": "C1",
+      "name": "Alex Chen",
+      "primaryRole": "Senior Java Backend Engineer",
+      "skills": ["Java", "Spring Boot", "Microservices", "PostgreSQL", "Kafka", "Docker", "REST API", "Redis"],
+      "experienceYears": 6,
+      "summary": "Senior backend specialist with 6 years experience in Spring Boot enterprise microservices, high-throughput Kafka streaming, and PostgreSQL query tuning."
+    },
+    {
+      "id": "C2",
+      "name": "Rohan Sharma",
+      "primaryRole": "Junior Java Developer",
+      "skills": ["Java", "Spring Boot", "MySQL", "REST API", "Git", "Hibernate"],
+      "experienceYears": 1,
+      "summary": "Recent CS graduate with internship experience developing RESTful web services in Java and Spring Boot with MySQL relational schemas."
+    },
+    {
+      "id": "C3",
+      "name": "Sarah Miller",
+      "primaryRole": "Lead React Frontend Developer",
+      "skills": ["React", "JavaScript", "TypeScript", "Tailwind CSS", "Redux", "HTML5", "CSS3", "Next.js"],
+      "experienceYears": 5,
+      "summary": "Frontend architect specializing in TypeScript, modern React hooks, Redux state architectures, and Tailwind CSS component systems."
+    },
+    {
+      "id": "C4",
+      "name": "Elena Rostova",
+      "primaryRole": "Frontend UI/UX Engineer",
+      "skills": ["React", "CSS3", "HTML5", "Figma", "JavaScript", "Tailwind CSS", "Storybook"],
+      "experienceYears": 3,
+      "summary": "Creative frontend engineer bridging visual design and code. Expert in Figma to React workflows, responsive CSS, and accessible UI widgets."
+    },
+    {
+      "id": "C5",
+      "name": "David Kim",
+      "primaryRole": "Full Stack Java & React Engineer",
+      "skills": ["Java", "Spring Boot", "React", "JavaScript", "PostgreSQL", "Docker", "REST API", "Git"],
+      "experienceYears": 4,
+      "summary": "Versatile full stack developer building end-to-end applications with Spring Boot REST backends and responsive React client applications."
+    },
+    {
+      "id": "C6",
+      "name": "Lucas Silva",
+      "primaryRole": "Full Stack Python & Vue Developer",
+      "skills": ["Python", "FastAPI", "Vue.js", "PostgreSQL", "Docker", "REST API", "Redis"],
+      "experienceYears": 3,
+      "summary": "Full stack engineer building high-speed asynchronous APIs with Python FastAPI and single-page apps with Vue 3 and Pinia."
+    },
+    {
+      "id": "C7",
+      "name": "Marcus Vance",
+      "primaryRole": "DevOps & Kubernetes Cloud Engineer",
+      "skills": ["Docker", "Kubernetes", "AWS", "Terraform", "CI/CD", "Linux", "Bash", "Ansible"],
+      "experienceYears": 5,
+      "summary": "DevOps engineer with deep expertise in multi-region AWS cloud deployments, Terraform infrastructure-as-code, and production Kubernetes clusters."
+    },
+    {
+      "id": "C8",
+      "name": "Amina Al-Mansoor",
+      "primaryRole": "Site Reliability Engineer (SRE)",
+      "skills": ["Linux", "Kubernetes", "Prometheus", "Grafana", "Python", "Docker", "CI/CD", "Elasticsearch"],
+      "experienceYears": 4,
+      "summary": "Observability and SRE practitioner focused on SLI/SLO tracking, Prometheus metrics pipelines, Grafana alert dashboards, and Linux server hardening."
+    },
+    {
+      "id": "C9",
+      "name": "Vikram Patel",
+      "primaryRole": "Machine Learning Engineer",
+      "skills": ["Python", "PyTorch", "Scikit-Learn", "Machine Learning", "NLP", "Pandas", "Docker", "HuggingFace"],
+      "experienceYears": 4,
+      "summary": "Machine learning engineer building transformer NLP pipelines, fine-tuning PyTorch models, and serving low-latency inference APIs."
+    },
+    {
+      "id": "C10",
+      "name": "Chloe Dupont",
+      "primaryRole": "Data Analyst & BI Specialist",
+      "skills": ["Python", "SQL", "Pandas", "Power BI", "Tableau", "Data Analysis", "Excel"],
+      "experienceYears": 3,
+      "summary": "Analytics professional transforming raw enterprise datasets into actionable insights with SQL queries, Pandas workflows, and Power BI dashboards."
+    },
+    {
+      "id": "C11",
+      "name": "Brian Kelly",
+      "primaryRole": "Backend Developer",
+      "skills": ["Java", "Spring Boot", "Microservices", "REST API", "Docker", "MySQL"],
+      "experienceYears": 3,
+      "summary": "Backend developer building Spring microservices and containerized REST APIs with MySQL storage."
+    },
+    {
+      "id": "C12",
+      "name": "Hannah Abbott",
+      "primaryRole": "Frontend Developer",
+      "skills": ["JavaScript", "HTML5", "CSS3", "React", "Git"],
+      "experienceYears": 2,
+      "summary": "Frontend developer focusing on responsive web pages and reusable React components."
+    },
+    {
+      "id": "C13",
+      "name": "Tariq Aziz",
+      "primaryRole": "Cloud Systems Administrator",
+      "skills": ["Linux", "Bash", "AWS", "Docker", "CI/CD"],
+      "experienceYears": 3,
+      "summary": "Systems administrator automating server operations with Bash scripting, Linux maintenance, and AWS cloud instances."
+    },
+    {
+      "id": "C14",
+      "name": "Jessica Taylor",
+      "primaryRole": "Data Scientist",
+      "skills": ["Python", "Pandas", "Scikit-Learn", "Machine Learning", "SQL", "Data Analysis"],
+      "experienceYears": 3,
+      "summary": "Data scientist developing predictive models with Scikit-Learn and extracting business metrics using SQL and Pandas."
+    },
+    {
+      "id": "C15",
+      "name": "Carlos Gomez",
+      "primaryRole": "Full Stack Engineer",
+      "skills": ["Java", "React", "JavaScript", "REST API", "MySQL", "Git"],
+      "experienceYears": 2,
+      "summary": "Junior full stack software developer with hands-on experience in Java, Spring REST services, and React web apps."
+    },
+    {
+      "id": "C16",
+      "name": "Priya Nair",
+      "primaryRole": "Backend Java Engineer",
+      "skills": ["Java", "Spring Boot", "PostgreSQL", "Kafka", "Docker", "REST API"],
+      "experienceYears": 4,
+      "summary": "Backend software engineer experienced in event-driven microservices using Spring Boot, Apache Kafka, and Docker."
+    },
+    {
+      "id": "C17",
+      "name": "Kevin Zhang",
+      "primaryRole": "Senior Frontend Engineer",
+      "skills": ["TypeScript", "React", "Redux", "Tailwind CSS", "HTML5", "CSS3", "Jest"],
+      "experienceYears": 6,
+      "summary": "Lead frontend engineer passionate about TypeScript, robust React architectures, unit testing, and performant web interfaces."
+    },
+    {
+      "id": "C18",
+      "name": "Samantha Reed",
+      "primaryRole": "Cloud & Infrastructure Engineer",
+      "skills": ["AWS", "Terraform", "Kubernetes", "Docker", "Linux", "CI/CD", "Python"],
+      "experienceYears": 4,
+      "summary": "Cloud infrastructure engineer orchestrating Kubernetes clusters on AWS with declarative Terraform scripts."
+    },
+    {
+      "id": "C19",
+      "name": "Arun Kumar",
+      "primaryRole": "Deep Learning Specialist",
+      "skills": ["Python", "PyTorch", "NLP", "Machine Learning", "Pandas", "Docker"],
+      "experienceYears": 3,
+      "summary": "AI researcher and deep learning practitioner specializing in NLP text classification, embedding generation, and PyTorch models."
+    },
+    {
+      "id": "C20",
+      "name": "Fatima Zahra",
+      "primaryRole": "BI & Analytics Developer",
+      "skills": ["SQL", "Power BI", "Tableau", "Data Analysis", "Python", "Excel"],
+      "experienceYears": 4,
+      "summary": "Business intelligence consultant delivering interactive executive dashboards, complex SQL aggregations, and business metrics."
+    },
+    {
+      "id": "C21",
+      "name": "Daniel Schmidt",
+      "primaryRole": "DevOps Engineer",
+      "skills": ["Docker", "Kubernetes", "Linux", "CI/CD", "Bash", "Prometheus"],
+      "experienceYears": 3,
+      "summary": "DevOps engineer building GitLab CI/CD pipelines, containerizing services with Docker, and deploying to Kubernetes."
+    },
+    {
+      "id": "C22",
+      "name": "Grace Hopper Jr.",
+      "primaryRole": "Full Stack Developer",
+      "skills": ["Java", "Spring Boot", "React", "TypeScript", "PostgreSQL", "Docker"],
+      "experienceYears": 5,
+      "summary": "Full stack engineer delivering scalable web platforms using Java Spring Boot backends and TypeScript React frontends."
+    },
+    {
+      "id": "C23",
+      "name": "Liam O'Connor",
+      "primaryRole": "UI Designer & Frontend Developer",
+      "skills": ["Figma", "HTML5", "CSS3", "JavaScript", "React", "Tailwind CSS"],
+      "experienceYears": 2,
+      "summary": "Frontend developer focusing on pixel-perfect implementations, Figma wireframes, and responsive CSS styling."
+    },
+    {
+      "id": "C24",
+      "name": "Mia Tanaka",
+      "primaryRole": "NLP & AI Researcher",
+      "skills": ["Python", "NLP", "PyTorch", "Scikit-Learn", "Machine Learning", "Pandas"],
+      "experienceYears": 3,
+      "summary": "Natural language processing engineer building semantic search engines, text embedding spaces, and transformer models."
+    },
+    {
+      "id": "C25",
+      "name": "Noah Williams",
+      "primaryRole": "Junior Web Developer",
+      "skills": ["HTML5", "CSS3", "JavaScript", "Git", "REST API"],
+      "experienceYears": 1,
+      "summary": "Entry-level web developer skilled in semantic HTML, modern CSS layouts, and basic JavaScript client-side scripting."
+    }
+  ],
+  "groundTruth": {
+    "J1": { "C1": 3, "C16": 3, "C11": 2, "C5": 2, "C22": 2, "C2": 1, "C15": 1, "C7": 0, "C3": 0, "C9": 0, "C10": 0, "C4": 0, "C6": 0, "C8": 0, "C12": 0, "C13": 0, "C14": 0, "C17": 0, "C18": 0, "C19": 0, "C20": 0, "C21": 0, "C23": 0, "C24": 0, "C25": 0 },
+    "J2": { "C2": 3, "C11": 3, "C1": 2, "C15": 2, "C5": 2, "C16": 2, "C22": 1, "C25": 1, "C3": 0, "C4": 0, "C6": 0, "C7": 0, "C8": 0, "C9": 0, "C10": 0, "C12": 0, "C13": 0, "C14": 0, "C17": 0, "C18": 0, "C19": 0, "C20": 0, "C21": 0, "C23": 0, "C24": 0 },
+    "J3": { "C3": 3, "C17": 3, "C4": 2, "C5": 2, "C22": 2, "C12": 1, "C23": 1, "C15": 1, "C25": 1, "C1": 0, "C2": 0, "C6": 0, "C7": 0, "C8": 0, "C9": 0, "C10": 0, "C11": 0, "C13": 0, "C14": 0, "C16": 0, "C18": 0, "C19": 0, "C20": 0, "C21": 0, "C24": 0 },
+    "J4": { "C4": 3, "C23": 3, "C3": 2, "C17": 2, "C12": 2, "C25": 1, "C5": 1, "C15": 1, "C1": 0, "C2": 0, "C6": 0, "C7": 0, "C8": 0, "C9": 0, "C10": 0, "C11": 0, "C13": 0, "C14": 0, "C16": 0, "C18": 0, "C19": 0, "C20": 0, "C21": 0, "C22": 0, "C24": 0 },
+    "J5": { "C5": 3, "C22": 3, "C1": 2, "C15": 2, "C16": 2, "C11": 2, "C3": 2, "C2": 1, "C17": 1, "C4": 1, "C6": 1, "C7": 0, "C8": 0, "C9": 0, "C10": 0, "C12": 0, "C13": 0, "C14": 0, "C18": 0, "C19": 0, "C20": 0, "C21": 0, "C23": 0, "C24": 0, "C25": 0 },
+    "J6": { "C6": 3, "C5": 1, "C9": 1, "C14": 1, "C1": 0, "C2": 0, "C3": 0, "C4": 0, "C7": 0, "C8": 0, "C10": 0, "C11": 0, "C12": 0, "C13": 0, "C15": 0, "C16": 0, "C17": 0, "C18": 0, "C19": 0, "C20": 0, "C21": 0, "C22": 0, "C23": 0, "C24": 0, "C25": 0 },
+    "J7": { "C7": 3, "C18": 3, "C8": 2, "C21": 2, "C13": 2, "C1": 1, "C16": 1, "C5": 0, "C2": 0, "C3": 0, "C4": 0, "C6": 0, "C9": 0, "C10": 0, "C11": 0, "C12": 0, "C14": 0, "C15": 0, "C17": 0, "C19": 0, "C20": 0, "C22": 0, "C23": 0, "C24": 0, "C25": 0 },
+    "J8": { "C8": 3, "C21": 3, "C7": 2, "C18": 2, "C13": 2, "C9": 1, "C1": 0, "C2": 0, "C3": 0, "C4": 0, "C5": 0, "C6": 0, "C10": 0, "C11": 0, "C12": 0, "C14": 0, "C15": 0, "C16": 0, "C17": 0, "C19": 0, "C20": 0, "C22": 0, "C23": 0, "C24": 0, "C25": 0 },
+    "J9": { "C9": 3, "C19": 3, "C24": 3, "C14": 2, "C10": 1, "C6": 1, "C8": 1, "C1": 0, "C2": 0, "C3": 0, "C4": 0, "C5": 0, "C7": 0, "C11": 0, "C12": 0, "C13": 0, "C15": 0, "C16": 0, "C17": 0, "C18": 0, "C20": 0, "C21": 0, "C22": 0, "C23": 0, "C25": 0 },
+    "J10": { "C10": 3, "C20": 3, "C14": 2, "C9": 1, "C19": 1, "C24": 1, "C6": 0, "C1": 0, "C2": 0, "C3": 0, "C4": 0, "C5": 0, "C7": 0, "C8": 0, "C11": 0, "C12": 0, "C13": 0, "C15": 0, "C16": 0, "C17": 0, "C18": 0, "C21": 0, "C22": 0, "C23": 0, "C25": 0 }
+  }
+}
